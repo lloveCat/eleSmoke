@@ -1,0 +1,8 @@
+<!--custom-tab-bar/index.wxml-->
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item {{doMDIndex === index? 'mousedown' : ''}}" data-path="{{item.pagePath}}" data-index="{{index}}" bindtouchstart="doMouseDown" bindtouchend="doMouseUp">
+    <cover-image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>
+    <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view>

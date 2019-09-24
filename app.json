@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/shopping/shopping",
+    "pages/order/order",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#E8E457",
+    "navigationBarTitleText": "eleSmoke",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#BDB6B6"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "resources/images/shouye.png",
+        "selectedIconPath": "resources/images/shouye-pink.png"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "text": "购物",
+        "iconPath": "resources/images/gouwu.png",
+        "selectedIconPath": "resources/images/gouwu-pink.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "resources/images/dingdan.png",
+        "selectedIconPath": "resources/images/dingdan-pink.png"
+      }
+    ],
+    "color": "#474747",
+    "selectedColor": "#D93E8A"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "uploadFile": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "是否授权小程序使用当前位置信息权限"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

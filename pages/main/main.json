@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "paomadeng" : "/myComponents/paomadeng/paomadeng"
+  }
+}

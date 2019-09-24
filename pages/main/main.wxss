@@ -1,0 +1,127 @@
+/* pages/main/main.wxss */
+
+/* 容器view */
+
+.ct-v {
+  height: 93vh;
+}
+
+.ct-v-topview {
+  height: 25vh;
+}
+
+.ct-v-topview-img {
+  height: 100%;
+  width: 100%;
+}
+
+.ct-v-productview {
+  height: auto;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  padding: 0, 20rpx;
+}
+
+.ct-v-productview image {
+  height: 20rpx;
+  width: 20rpx;
+  margin: 0 10rpx;
+}
+
+.ct-v-productview text {
+  margin-right: 65rpx;
+}
+
+.ct-v-gg {
+  background-color: #e56b6b;
+  color: #eeebeb;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 56rpx;
+}
+
+.ct-v-gg image {
+  height: 48rpx;
+  width: 48rpx;
+  vertical-align: middle;
+  /* display: inline-block; *//* margin: 0 20rpx; */
+}
+
+.ct-v-gg-paomadeng {
+  display: inline-block;
+  width: 75%;
+  height: 60rpx;
+  line-height: 60rpx;
+  /* color: black; *//* background-color: yellow; */
+  position: absolute;
+  right: 0;
+}
+
+.ct-v-padding {
+  height: 0.5vh;
+  background-color: #9B9B9B;
+}
+.ct-v-lightline {
+  height: 2rpx;
+  margin-bottom: 20rpx;
+  background-color: #C4C4C4;
+}
+.ct-v-productTypes {
+  /* background-color: blue; */
+  width: 750rpx;
+  font-size: 24rpx;
+  text-align: center;
+  height: auto;
+  padding: 0 0 15rpx 0;
+  margin: 0;
+}
+
+.ct-v-productTypes-block {
+  display: inline-block;
+  width: 136rpx;
+  height: 200rpx;
+  /* background-color: yellow; */
+  margin-left: 12rpx;
+}
+
+.ct-v-productTypes-block image {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 20rpx 18rpx;
+}
+
+.ct-v-imageShow {
+  height: auto;
+  /* background-color: blue; */
+}
+
+.ct-v-imageShow-image {
+  display: block;
+  width: 100%;
+  height: 24vh;
+}
+
+.ct-v-imageShow-more {
+  color: #db3310;
+  height: auto;
+  font-size: 28rpx;
+  line-height: 56rpx;
+}
+
+.ct-v-imageShow-more image {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.ct-v-imageShow-more-rightView {
+  float: right;
+  color: black;
+  height: 100%;
+  width: 100rpx;
+  text-align: right;
+}
+

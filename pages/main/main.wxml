@@ -1,0 +1,41 @@
+<!-- 首页 -->
+<scroll-view class="ct-v" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+  <swiper class="ct-v-topview" indicator-dots="true" autoplay="true">
+    <swiper-item wx:for="{{top_img}}" wx:key="index" data-index="{{index}}" circular="true">
+      <image class="ct-v-topview-img" src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="ct-v-productview">
+    <block wx:for="{{product_labels}}" wx:key="index">
+      <image src="/resources/images/check-red.png"></image>
+      <text>{{item}}</text>
+    </block>
+    <view class="ct-v-lightline"></view>
+  </view>
+  <view class="ct-v-gg">
+    <image src="{{gg_img}}"></image>
+    公告
+    <view class="ct-v-gg-paomadeng">
+      <!-- <paomadeng text="XXX牌电子烟合作热线: 0797-863-3793" size="24"></paomadeng> -->
+    </view>
+  </view>
+  <view class="ct-v-productTypes">
+    <view class="ct-v-productTypes-block" wx:for="{{product_types}}" wx:key="index" data-page="{{item.type_page}}" bindtap="toTypePage">
+    <image src="{{item.type_img}}"></image>
+    {{item.type_txt}}
+    </view>
+  </view>
+  <view class="ct-v-imageShow">
+  <image class="ct-v-imageShow-image" src="/resources/images/eleSmokeAd.jpg"></image>
+  <image class="ct-v-imageShow-image" src="/resources/images/eleSmokeAd2.jpg"></image>
+  <view class="ct-v-padding"></view>
+  <view class="ct-v-imageShow-more">
+    <image src="/resources/images/clock.png"></image>
+    准点秒杀
+    <view class="ct-v-imageShow-more-rightView {{isMoreDown? 'mousedown': ''}}" bindtouchstart="onMouseDown" bindtouchend="onMouseUp">更多 ＞</view>
+      <view class="ct-v-lightline"></view>
+    </view>
+  </view>
+  <view class="ct-v-padding"></view>
+
+</scroll-view>

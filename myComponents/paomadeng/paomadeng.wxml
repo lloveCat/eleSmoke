@@ -1,0 +1,7 @@
+<!--myComponents/paomadeng/paomadeng.wxml-->
+<!-- 自定义组件：跑马灯 -->
+<view class='marquee_container'>
+  <view class='marquee_text' style='left:{{ -marqueeDistance }}rpx;font-size: {{size}}rpx;'>
+    {{ text }}
+  </view>
+</view>

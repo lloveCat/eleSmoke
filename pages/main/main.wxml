@@ -37,5 +37,5 @@
     </view>
   </view>
   <view class="ct-v-padding"></view>
-
+  <view ></view>
 </scroll-view>

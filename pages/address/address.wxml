@@ -1,0 +1,12 @@
+<!--pages/address/address.wxml-->
+<view style="width: 100vw; height: 100vh; background-color: #E5E2E2; ">
+<view wx:for="{{addressList}}" wx:key="index" style="background-color: white; position:relative; padding: 25rpx 20rpx; border-bottom: 1rpx solid #c4c4c4; font-size: 28rpx;" data-index="{{index}}" bindtap="chooseAddress">
+  <text style="display: inline-block;">收件人: {{item.name}}</text>
+  <text style="display: inline-block; position:absolute; right: 20rpx; top: 25rpx;">{{item.phone}}</text>
+  <text style="display: block; padding-top: 20rpx;">收货地址: {{item.province + item.city + item.county + item.detail}}</text>
+</view>
+<view style="padding-top: 30rpx; color: white;">
+  <text style="display: inline-block; width: 40vw; font-size: 28rpx; padding: 2vw 0; text-align: center; background-color: green; margin: 0 5vw; border-radius: 10rpx;" bindtap="addAddress">手动添加地址</text>
+  <text style="display: inline-block; width: 40vw; font-size: 28rpx; padding: 2vw 0; text-align: center;  background-color: red; margin: 0 5vw;  border-radius: 10rpx;" bindtap="getSystemAddress">一键获取地址</text>
+</view>
+</view>

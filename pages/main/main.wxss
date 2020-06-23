@@ -3,11 +3,11 @@
 /* 容器view */
 
 .ct-v {
-  height: 93vh;
+  height: calc(100vh - 15vw);
 }
 
 .ct-v-topview {
-  height: 25vh;
+  height: 50vw;
 }
 
 .ct-v-topview-img {
@@ -58,17 +58,19 @@
 }
 
 .ct-v-padding {
-  height: 0.5vh;
-  background-color: #9B9B9B;
+  height: 5rpx;
+  background-color: #9b9b9b;
 }
+
 .ct-v-lightline {
   height: 2rpx;
   margin-bottom: 20rpx;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
 }
+
 .ct-v-productTypes {
   /* background-color: blue; */
-  width: 750rpx;
+  width: 100vw;
   font-size: 24rpx;
   text-align: center;
   height: auto;
@@ -98,8 +100,8 @@
 
 .ct-v-imageShow-image {
   display: block;
-  width: 100%;
-  height: 24vh;
+  width: 100vw;
+  height: 50vw;
 }
 
 .ct-v-imageShow-more {
@@ -125,3 +127,50 @@
   text-align: right;
 }
 
+.ct-v-productlist {
+  width: 100%;
+  height: auto;
+}
+
+.ct-v-pl-typename {
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.ct-v-pl-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ct-v-pl-product {
+  display: inline-block;
+  width: 32vw;
+  height: auto;
+  text-align: center;
+  margin: 0 0 0 1vw;
+}
+
+.ct-v-pl-product image {
+  width: 100%;
+  height: 200rpx;
+}
+
+.ct-v-pl-ps-name {
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ct-v-pl-ps-price {
+  color: red;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+}

@@ -1,2 +1,35 @@
-<!--pages/shopping/shopping.wxml-->
-<text>pages/shopping/shopping.wxml</text>
+<view class="container-bottom">
+  <text class="container-bottom-sumPrice">总计:￥{{sumPrice}}</text>
+  <view class="container-bottom-oper">
+    <text class="oper-editor" bindtap="toEditor">{{isEditor? '完成' : '编辑'}}</text>
+    <text class="oper-delete"  bindtap="delOrCal">{{isEditor? '删除' : '结算'}}</text>
+  </view>
+</view>
+<view wx:if="{{(gwcList) && (gwcList.length === 0)}}" class="container">
+<view class="container-empty">
+  <image src="/resources/images/gouwuche.png"></image>
+</view>
+  <text>购物车还是空的哦</text>
+</view>
+<scroll-view wx:elif="{{(gwcList) && (gwcList.length > 0)}}" class="container-gwcList">
+  <view class="container-gwcList-type">
+    <checkbox checked="{{isAllSelect}}" bindtap="selectAll"></checkbox>
+    平台自营
+  </view>
+  <checkbox-group bindchange="chooseProduct">
+    <view class="container-gwcList-info" wx:for="{{gwcList}}" wx:key="index">
+      <checkbox class="info-check" value="{{index}}" checked="{{isAllSelect}}"></checkbox>
+      <image class="info-img" src="{{item.product_img}}" ></image>
+      <view class="info-detail">
+        <text class="info-detail-name" data-id="{{item.product_id}}" bindtap="toProductPage">{{item.product_name}}</text>
+        <text class="info-detail-sd">规格:{{item.product_standrad}}</text>
+        <text class="info-detail-price">￥ {{item.product_price}}</text>
+        <view class="info-detail-count">
+          <text class="count-button" data-index="{{index}}" bindtap="delCount">-</text>
+          <text class="count-show" >{{item.product_count}}</text>
+          <text class="count-button" data-index="{{index}}" bindtap="addCount">+</text>
+        </view>
+      </view>
+    </view>
+  </checkbox-group>
+</scroll-view>

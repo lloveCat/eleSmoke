@@ -1,4 +1,6 @@
 // pages/main/main.js
+var that = null;
+var model = require("../../utils/model.js")
 Page({
 
   /**
@@ -16,15 +18,15 @@ Page({
       },{
         type_page: "",
         type_img: "/resources/images/night-purple.png",
-        type_txt: "传统小吃"
+        type_txt: "清新款"
       },{
         type_page: "",
         type_img: "/resources/images/video-red.png",
-        type_txt: "永春老醋"
+        type_txt: "耐摔款"
       },{
         type_page: "",
         type_img: "/resources/images/video-purple.png",
-        type_txt: "永春茗茶"
+        type_txt: "靓丽款"
       },{
         type_page: "",
         type_img: "/resources/images/vision-green.png",
@@ -53,13 +55,14 @@ Page({
       ],
       gg_img: "/resources/images/gg-white.png",
       isMoreDown:false,
+      product_list: model.getData()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this;
   },
 
   /**
@@ -115,7 +118,6 @@ Page({
 
   },
   toTypePage: function(e){
-    console.log(e);
     const data = e.currentTarget.dataset;
     var type_page = data.page;
     console.log('用户点击去往 ', type_page,'页面');
@@ -130,5 +132,30 @@ Page({
     this.setData({
       isMoreDown: false
     })
+    wx.navigateTo({
+      url: '/pages/seckill/seckill',
+    })
+  },
+  doToastGG: function (e) {
+    wx.showToast({
+      title: '此处应有对话框',
+      duration: 2000
+    })
+  },
+  toProductPage: function(e) {
+    const productId = e.currentTarget.dataset.productid;
+    wx.navigateTo({
+      url: '/pages/product/product?id=' + productId,
+    })
   }
+  // dodddodododod: function(e) {
+  //   var productOrder = this.data.product_list[0].products.sort(function(a,b) {
+  //     return (a.price - b.price)
+  //   })
+  //   var productList = this.data.product_list;
+  //   productList[0].products = productOrder;
+  //   this.setData({
+  //     product_list: productList
+  //   })
+  // }
 })

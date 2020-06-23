@@ -1,0 +1,22 @@
+<!--pages/address/addAddress.wxml-->
+<view style="width: 100%; height:100vh; background-color: #E5E2E2; font-size: 28rpx;">
+<view style="border-top: 1rpx solid #c4c4c4; background-color: white;">
+  <label style="display: inline-block;  width: 20vw; line-height: 12vw; padding: 0 3vw 0 2vw;">收件人</label>
+  <input type="input" bindblur="saveReceiver" style=" width: 74vw; display: inline-block; line-height: 10vw; vertical-align: middle;"></input>
+</view>
+<view style="border-top: 1rpx solid #c4c4c4; background-color: white;">
+  <label style="display: inline-block;  width: 20vw; line-height: 12vw; padding: 0 3vw 0 2vw;">联系电话</label>
+  <input type="number" bindblur="savePhone" style=" width: 74vw; display: inline-block; line-height: 10vw; vertical-align: middle;"></input>
+</view>
+<picker mode="region" bindchange="chooseCity">
+<view style="border-top: 1rpx solid #c4c4c4; background-color: white;">
+  <label style="display: inline-block; width: 20vw; line-height: 12vw; padding: 0 3vw 0 2vw;">所在地区</label>
+  <text style="width: 74vw; display: inline-block; line-height: 10vw;text-align: right; vertical-align: middle;">{{city}} ></text>
+</view>
+</picker>
+<view style="border-top: 1rpx solid #c4c4c4; background-color: white;">
+  <label style="display: inline-block;  width: 20vw; line-height: 12vw; padding: 0 3vw 0 2vw;">详细地址</label>
+  <input bindblur="saveDetail" style=" width: 74vw; vertical-align: middle; display: inline-block; line-height: 10vw;"></input>
+</view>
+</view>
+<view style="position:fixed; width: 100%; height: 10vw; line-height:10vw; bottom: 0; background-color: red; color: white; text-align: center;" bindtap="saveAddress">保存</view>

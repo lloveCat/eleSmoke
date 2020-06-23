@@ -1,0 +1,10 @@
+<!--pages/settlement/settlement.wxml-->
+<view style="position:relative; padding: 25rpx 20rpx; border-top: 1rpx solid #c4c4c4; font-size: 28rpx; border-bottom: 1rpx transparent solid;" bindtap="toChooseAddress">
+  <text wx:if="{{address === null}}" style="display: inline-block; padding-left: 20rpx; color: red;">请选择收货地址</text>
+  <text wx:if="{{address !==null}}" style="display: inline-block;">收件人: {{address.name}}</text>
+  <text wx:if="{{address !==null}}" style="display: inline-block; position:absolute; right: 75rpx; top: 25rpx;">{{address.phone}}</text>
+  <text wx:if="{{address !==null}}" style="display: block; padding-top: 20rpx;">收货地址: {{address.province + address.city + address.county + address.detail}}</text>
+  <view style="position: absolute; top: calc((100% - 36rpx)/ 2); right: 10rpx; text-align: center;">
+    >
+  </view>
+</view>

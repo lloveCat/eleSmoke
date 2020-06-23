@@ -1,1 +1,148 @@
 /* pages/shopping/shopping.wxss */
+
+.container-bottom {
+  width: 100%;
+  position: fixed;
+  border-top: 1rpx solid #c4c4c4;
+  bottom: calc(15vw);
+}
+
+.container-bottom-sumPrice {
+  color: red;
+  display: inline-block;
+  height: 10vw;
+  line-height: 10vw;
+  padding: 0 20rpx;
+}
+
+.container-bottom-oper {
+  width: 40vw;
+  height: 10vw;
+  float: right;
+}
+
+.container-bottom-oper text {
+  display: inline-block;
+  width: 50%;
+  height: 10vw;
+  line-height: 10vw;
+  color: white;
+  text-align: center;
+}
+
+.oper-editor {
+  background-color: blue;
+}
+
+.oper-delete {
+  background-color: red;
+}
+
+.container-gwcList {
+  height: calc(100vh - 25vw);
+  font-size: 28rpx;
+}
+
+.container-gwcList-type {
+  border-top: 1rpx solid #c4c4c4;
+  border-bottom: 1rpx solid #c4c4c4;
+  text-align: left;
+}
+
+.container-gwcList-type checkbox {
+  padding: 3vw;
+  display: inline-block;
+}
+
+.container-gwcList-info {
+  border-bottom: 1rpx solid #c4c4c4;
+  height: 25vw;
+}
+
+.info-check {
+  padding: 3vw;
+}
+
+.info-img {
+  display: inline-block;
+  width: 20vw;
+  height: 20vw;
+  padding: 2.5vw 0;
+  vertical-align: middle;
+}
+
+.info-detail {
+  display: inline-block;
+  height: 100%;
+  width: 62vw;
+  vertical-align: middle;
+  margin-left: 2.75vw;
+  position: relative;
+}
+
+.info-detail-name {
+  display: block;
+  font-size: 28rpx;
+  margin-top: 3vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info-detail-sd {
+  display: block;
+  font-size: 24rpx;
+  color: #c4c4c4;
+  padding: 10rpx 0;
+}
+
+.info-detail-price {
+  display: block;
+  font-size: 28rpx;
+  color: red;
+  margin-top: 15rpx;
+}
+
+.info-detail-count {
+  position: absolute;
+  height: 50rpx;
+  bottom: 20rpx;
+  right: 20rpx;
+  text-align: center;
+}
+
+.count-button {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  background-color: #c4c4c4;
+  vertical-align: top;
+}
+
+.count-show {
+  background-color: #c4c4c4;
+  display: inline-block;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 0 5rpx;
+  vertical-align: top;
+}
+
+.container-empty {
+  border-radius: 50%;
+  background-color: #d9d8d8;
+}
+
+.container-empty image {
+  display: block;
+  width: 75rpx;
+  height: 75rpx;
+  padding: 25rpx;
+}
+
+.container text {
+  display: inline-block;
+  margin-top: 30rpx;
+  color: #878585;
+}

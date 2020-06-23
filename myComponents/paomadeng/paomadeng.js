@@ -64,7 +64,6 @@ Component({
     _this.setData({
       length: length,
     });
-    console.log(_this.data.length)
     _this.scrolling();
   }
 })

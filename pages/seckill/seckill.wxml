@@ -1,0 +1,4 @@
+<!--pages/seckill/seckill.wxml-->
+<button class='contact' type="default-dark" session-from="weapp" size="27"  show-message-card="true" open-type='contact' plain>联系我们
+</button>
+<contact-button>你好</contact-button>

@@ -3,7 +3,12 @@
     "pages/main/main",
     "pages/shopping/shopping",
     "pages/order/order",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/seckill/seckill",
+    "pages/product/product",
+    "pages/settlement/settlement",
+    "pages/address/address",
+    "pages/address/addAddress"
   ],
   "window": {
     "backgroundTextStyle": "dark",

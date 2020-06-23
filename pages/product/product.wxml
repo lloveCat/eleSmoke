@@ -1,0 +1,122 @@
+<view class="container-shade" hidden="{{!isPrepareBuy && !isShare}}">
+</view>
+<cover-view class="container-QrCode" wx:if="{{isShowSaveQrCode}}">
+<cover-image class="container-QrCode-close" src="/resources/images/guanbi.png"bindtap="closeSaveQrCode"></cover-image>
+<cover-image class="container-QrCode-img" src="{{qrCodeData}}"></cover-image>
+<cover-view class="container-QrCode-save" bindtap="saveQrCode">
+  保存图片
+</cover-view>
+</cover-view>
+<view class="container-share" hidden="{{!isShare}}" style="position: fixed; bottom: 0; height: 40vw; width: 100%; z-index: 999; text-align: center; background-color: white;">
+<view class="container-share-subView">
+  <image src="/resources/images/product_1.png"></image>
+  <text>分享给朋友</text>
+</view>
+<view class="container-share-subView"bindtap="getQrCode">
+<image src="/resources/images/product_1.png"></image>
+  <text>生成商品海报</text>
+</view>
+<button class="container-share-close" bindtap="closeShare">关闭</button>
+</view>
+<view class="container-prepareBuy" hidden="{{!isPrepareBuy}}">
+  <view class="container-prepareBuy-info">
+    <image class="container-prepareBuy-img" src="{{product.img[0]}}"></image>
+    <text class="container-prepareBuy-price">￥{{product.price}}</text>
+    <text class="container-prepareBuy-inventory">库存 {{product.inventory}}</text>
+    <image class="container-prepareBuy-close" src="/resources/images/guanbi.png" bindtap="closePrepareBuy"></image>
+  </view>
+  <view class="container-prepareBuy-standrad">
+    <text class="standrad-title">规格</text>
+    <view class="standrad-listView">
+    <text wx:for="{{product.standrad}}" class="standrad-txt {{standradIndex === index? 'isChooseStandrad' : ''}}"  data-sdindex="{{index}}" bindtap="chooseSD" wx:key="index">{{item}}</text>
+    </view>  
+  </view>
+  <view class="container-prepareBuy-countView">
+    <text class="countView-title">数量</text>
+    <view class="countView-oper">
+      <text bindtap="delCount">-</text>
+      <input type="number" maxlength="3" value="{{productCount}}" bindinput="inputCount"/>
+      <text bindtap="addCount">+</text>
+    </view>
+  </view>
+</view>
+  <cover-view class="c-pro-gotogwc" bindtap="goToGWC">
+    <cover-image src="/resources/images/gouwuche-black.png"></cover-image>
+  </cover-view>
+<scroll-view class="container-product" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+  <swiper class="c-pro-showImg" autoplay="{{false}}" indicator-dots="true">
+    <swiper-item wx:for="{{product.img}}" wx:key="index">
+      <image src="{{item}}" bindtap="previewImage" data-src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="c-pro-info">
+    <text class="c-pro-info-name" selectable="true">{{product.name}}</text>
+    <text class="c-pro-info-price"><text class="c-pro-info-priceFh">￥</text>{{product.price}}</text>
+    <text class="c-pro-info-other c-pro-info-del">￥{{product.oriprice}}</text>
+    <text class="c-pro-info-other" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销量: {{product.savo}}件</text>
+    <view class="c-pro-info-share" bindtap="doShare">
+      <image src="/resources/images/fenxiang.png"></image>
+      <text>分享</text>
+    </view>
+  </view>
+
+  <view class="c-pro-standrad" id="0" bindtap="prepareBuy">
+    <text class="paddingX-20">选择</text>
+    <text class="paddingX-20 c-pro-standrad-std">规格</text>
+    <view class="c-pro-standrad-image">
+      <image src="/resources/images/xiangyou.png"></image>
+    </view>
+  </view>
+  <view class="c-pro-chooseDetail">
+    <view bindtap="toDetail">
+      <text class="{{isDetail? 'chooseDetail': ''}}">商品详情</text>
+    </view>
+    <view bindtap="toEval">
+      <text class="{{!isDetail? 'chooseDetail': ''}}">评价</text>
+    </view>
+  </view>
+  <view class="c-pro-detailoreval">
+    <view class="c-pro-detail" wx:if="{{isDetail}}">
+      <view wx:for="{{product.details}}" wx:key="index">
+        <image src="{{item}}" bindtap="previewDetailImage" data-src="{{item}}"></image>
+      </view>
+    </view>
+    <view class="c-pro-evaluation" wx:else>
+      <view class="chooseEval">
+        <view class="chooseEval-item {{level === 0 ? 'isChooseEval': ''}}" data-level="0" bindtap="chooseEvaluation">
+          <text>全部</text>
+          <text>({{product.evaluation.length}})</text>
+        </view>
+        <view class="chooseEval-item {{level === 1 ? 'isChooseEval': ''}}"  data-level="1" bindtap="chooseEvaluation">
+          <text>好评</text>
+          <text>({{goodEval}})</text>
+        </view>
+        <view class="chooseEval-item {{level === 2 ? 'isChooseEval': ''}}"  data-level="2" bindtap="chooseEvaluation">
+          <text>中评</text>
+          <text>({{middleEval}})</text>
+        </view>
+        <view class="chooseEval-item {{level === 3 ? 'isChooseEval': ''}}"  data-level="3" bindtap="chooseEvaluation">
+          <text>差评</text>
+          <text>({{badEval}})</text>
+        </view>
+      </view>
+      <view class="evaluation" wx:for="{{showEvaluations}}" wx:key="index">
+        <text class="eval-item-name">{{item.name}} :</text>
+        <text class="eval-item-text" selectable="true">{{item.txt}}</text>
+        <text class="eval-item-time">{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="c-pro-operation">
+  <view class="c-pro-oper-withImg">
+    <image src="/resources/images/home-gray.png" bindtap="goHome"></image>
+    <text>首页</text>
+  </view>
+  <view class="c-pro-oper-withImg">
+    <image src="{{isCollect? '/resources/images/yishoucang.png':'/resources/images/shoucang.png'}}" bindtap="doCollect"></image>
+    <text>{{isCollect? '已收藏' : '收藏'}}</text>
+    </view>
+  <view class="c-pro-oper-addgwc" id="1" bindtap="prepareBuy">加入购物车</view>
+  <view  class="c-pro-oper-buy" id="2" bindtap="prepareBuy">立即购买</view>
+</view>
